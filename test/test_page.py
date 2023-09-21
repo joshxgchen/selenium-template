@@ -68,7 +68,7 @@ def test_secret_scenario():
 
     # Assuming this element is present in secret.html with the ID "secret_text"
     secret_text = driver.find_element(By.XPATH, "/html/body").text
-    assert "Thank you, Josh" in secret_text
-    assert "You entered the secret code: magic" in secret_text
+    assert "Thanks for for being an extra special supporter, Josh." in secret_text
+    assert "magic" in secret_text
 
     driver.quit()
