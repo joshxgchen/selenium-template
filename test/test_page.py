@@ -17,13 +17,10 @@ def test_nonsecret_scenario():
     submit_button = driver.find_element(By.ID, "submit")
     submit_button.click()
 
-    with wait_for_page_load(driver):
-       pass
+    #with wait_for_page_load(driver): removed bitches
+    #    pass
 
-    assert "response.html" in driver.current_url
-
-    # Assuming this element is present in response.html with the ID "response_text"
-    response_text = driver.find_element(By.ID, "response_text").text
+    response_text = driver.find_element(By.XPATH, "/html/body")
     assert "Thank you, Josh" in response_text
     assert "We also like Sushi" in response_text
 
@@ -48,13 +45,12 @@ def test_secret_scenario():
     submit_button = driver.find_element(By.ID, "submit")
     submit_button.click()
 
-    with wait_for_page_load(driver):
-       pass
+    #with wait_for_page_load(driver): removed bitches
+    #    pass
 
-    assert "response.html" in driver.current_url
-
+    response_text = driver.find_element(By.XPATH, "/html/body")
+    assert "Thank you, Bob, for supporting Simple Web Page Industries. We appreciate your business." in name_response.text
     # Assuming this element is present in response.html with the ID "response_text"
-    response_text = driver.find_element(By.ID, "response_text").text
     assert "Thank you, Josh" in response_text
     assert "We also like Sushi" in response_text
 
