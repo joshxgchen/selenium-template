@@ -17,8 +17,8 @@ def test_nonsecret_scenario():
     submit_button = driver.find_element(By.ID, "submit")
     submit_button.click()
 
-    #with wait_for_page_load(driver): removed bitches
-    #    pass
+    with wait_for_page_load(driver):
+       pass
 
     assert "response.html" in driver.current_url
 
@@ -48,8 +48,8 @@ def test_secret_scenario():
     submit_button = driver.find_element(By.ID, "submit")
     submit_button.click()
 
-    #with wait_for_page_load(driver): removed bitches
-    #    pass
+    with wait_for_page_load(driver):
+       pass
 
     assert "response.html" in driver.current_url
 
