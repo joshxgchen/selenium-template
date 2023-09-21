@@ -47,13 +47,8 @@ def test_secret_scenario():
     assert "We also really like Sushi" in response_text
 
     # Assuming the button is present in response.html
-    secret_button = driver.find_element(By.ID, "secretButton")
-    assert secret_button.is_displayed()
-
-    secret_button.click()
-
-    with wait_for_page_load(driver):
-        pass
+    with wait_for_page_load(driver, 10):
+        driver.find_element(By.ID, "secretButton").click()
 
     assert "secret.html" in driver.current_url
 
