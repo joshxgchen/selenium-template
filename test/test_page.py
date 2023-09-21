@@ -14,11 +14,8 @@ def test_nonsecret_scenario():
     food_input.send_keys("Sushi")
     password_input.send_keys("password123")
 
-    submit_button = driver.find_element(By.ID, "submit")
-    submit_button.click()
-
-    with wait_for_page_load(driver):
-       pass
+    with wait_for_page_load(driver, 10):
+        driver.find_element(By.ID, "submit").click()
 
     response_text = driver.find_element(By.XPATH, "/html/body").text
     assert "Thank you, Josh" in response_text
@@ -42,11 +39,8 @@ def test_secret_scenario():
     food_input.send_keys("Sushi")
     password_input.send_keys("magic")  # Updated to use the correct secret code
 
-    submit_button = driver.find_element(By.ID, "submit")
-    submit_button.click()
-
-    with wait_for_page_load(driver): 
-       pass
+    with wait_for_page_load(driver, 10):
+        driver.find_element(By.ID, "submit").click()
 
     response_text = driver.find_element(By.XPATH, "/html/body").text
     assert "Thank you, Josh" in response_text
