@@ -26,7 +26,7 @@ def test_nonsecret_scenario():
     assert "We also really like Sushi" in response_text
 
     # Assuming the button is not present in response.html
-    secret_button = driver.find_elements(By.ID, "secret_button")
+    secret_button = driver.find_elements(By.ID, "secretButton")
     assert len(secret_button) == 0
 
     driver.quit()
@@ -56,7 +56,7 @@ def test_secret_scenario():
     assert "We also really like Sushi" in response_text
 
     # Assuming the button is present in response.html
-    secret_button = driver.find_element(By.ID, "secret_button")
+    secret_button = driver.find_element(By.ID, "secretButton")
     assert secret_button.is_displayed()
 
     secret_button.click()
