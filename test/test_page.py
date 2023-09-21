@@ -23,7 +23,7 @@ def test_nonsecret_scenario():
     response_text = driver.find_element(By.XPATH, "/html/body").text
     #assert "Thank you, Bob, for supporting Simple Web Page Industries. We appreciate your business." in response_text
     assert "Thank you, Josh" in response_text
-    assert "We also like Sushi" in response_text
+    assert "We also really like Sushi" in response_text
 
     # Assuming the button is not present in response.html
     secret_button = driver.find_elements(By.ID, "secret_button")
@@ -53,7 +53,7 @@ def test_secret_scenario():
     #assert "Thank you, Bob, for supporting Simple Web Page Industries. We appreciate your business." in response_text
     # Assuming this element is present in response.html with the ID "response_text"
     assert "Thank you, Josh" in response_text
-    assert "We also like Sushi" in response_text
+    assert "We also really like Sushi" in response_text
 
     # Assuming the button is present in response.html
     secret_button = driver.find_element(By.ID, "secret_button")
